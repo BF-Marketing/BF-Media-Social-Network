@@ -1,13 +1,12 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { AuthenticationError, UserInputError, PubSub } from 'apollo-server';
-
-import { SECRET_KEY } from '../config.js';
 import PostModel from '../models/postModel.js';
 import UserModel from '../models/userModel.js';
 import { validateRegisterInput, validateLoginInput } from '../validators.js';
 import checkAuth from '../checkAuth.js';
-
+import dotenv from 'dotenv';
+dotenv.config()
 
 const pubsub = new PubSub();
 
@@ -18,7 +17,7 @@ function generateToken(user){
         email: user.email,
         username: user.username,
         profileImageLink: user.profileImageLink
-    }, SECRET_KEY, { expiresIn: '1h' });
+    }, process.env.SECRET_KEY, { expiresIn: process.env.TOKEN_EXP });
 }
 
 // after every query, mutation or subscription

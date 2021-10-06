@@ -4,3 +4,4 @@ node_modules
 
 # configuration
 config.js
+.env

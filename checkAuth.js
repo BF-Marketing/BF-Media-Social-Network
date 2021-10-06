@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { AuthenticationError } from 'apollo-server';
-
-import { SECRET_KEY } from './config.js';
+import dotenv from 'dotenv';
+dotenv.config()
 
 // checks authenticity of the user
 function checkAuth(context){
@@ -10,7 +10,7 @@ function checkAuth(context){
         const token = authHeader.split('Bearer ')[1];
         if(token){
             try{
-                const user = jwt.verify(token, SECRET_KEY);
+                const user = jwt.verify(token, process.env.SECRET_KEY);
                 return user;
             }
             catch(err){
