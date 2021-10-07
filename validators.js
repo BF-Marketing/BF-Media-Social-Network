@@ -14,7 +14,7 @@ export function validateRegisterInput(username, email, profileImageLink, passwor
     else if(profileImageLink.trim() === ''){
         errors.profileImageLink = 'You must provide a link to your profile photo'; 
     }
-    else if(password === '' ){
+    else if(password === ''){
         errors.password = 'Password must not be empty';
     }
     else if(password !== confirmPassword ){
