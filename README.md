@@ -13,16 +13,16 @@ To see how the client-side was built, you should go to the frontend repository: 
 
 ### Homepage
 
-![](screenshots/homepage.PNG)
+![](screenshots/homepage.png)
 
 ### User page
 
-![](screenshots/userpage.PNG)
+![](screenshots/userpage.png)
 
 ### Post details
 
-![](screenshots/postdetails.PNG)
+![](screenshots/postdetails.png)
 
 ### Create post
 
-![](screenshots/createpost.PNG)
+![](screenshots/createpost.png)
